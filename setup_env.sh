@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
 
-sudo su
-export PATH=$PATH:/opt/vertx/bin
-echo $PATH
-vertx -version
+sudo /opt/vertx/bin/vertx run -cp /opt/api/amq-0.0.1-SNAPSHOT.jar com.ait.devops.amq.Boot &
