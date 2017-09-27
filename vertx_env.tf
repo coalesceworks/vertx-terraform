@@ -5,14 +5,11 @@ provider "aws" {
 }
 
 
-resource "aws_launch_configuration" "vertx" {
-  name_prefix   = "terraform-vertx-hosts-"
-  image_id 		= "ami-3755bd4d" 
-  instance_type = "t2.micro"
-  key_name 		=	"vertx_rsa"
-  lifecycle {
-    create_before_destroy = true
-  }
+resource "aws_instance" "vertx" {
+  ami	 			= 	"${var.vertx_aws_ami}" 
+  instance_type 	= 	"${var.vertx_aws_instance_type}"
+  key_name 			=	"vertx_rsa"
+  
   user_data = <<-EOF
     #!/bin/bash
     sudo curl https://raw.githubusercontent.com/AspireInformationTechnologiesLimited/vertx-terraform/master/setup_env.sh | sudo sh
@@ -26,7 +23,7 @@ resource "aws_iam_user" "user" {
 
 resource "aws_key_pair" "deployer" {
   key_name   = "vertx_rsa"
-  public_key = "${var.aws_node_public_key}"
+  public_key = "${var.vertx_aws_node_public_key}"
 }
 
 resource "aws_eip" "ip" {

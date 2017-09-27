@@ -1,0 +1,6 @@
+access_key 						= 	"YOUR AWS ACCESS KEY HERE"
+secret_key 						= 	"YOUR AWS SECRET KEY HERE"
+region     						= 	"YOUR AWS REGION REMOVE IF YOU WANT TO DEFAULT TO us-east-1"
+vertx_aws_node_public_key		=	"PUBLIC KEY TO SSH TO NODE HERE"
+vertx_aws_instance_type			=	"YOUR AWS INSTANCE TYPE REMOVE IF YOU WANT TO DEFAULT TO t2.micro"
+vertx_aws_ami					=	"YOUR AMI HERE"
