@@ -10,6 +10,7 @@
 
 * pull https://github.com/AspireInformationTechnologiesLimited/vertx-terraform
 * cd to vertx-terraform project location ex: /microservices/vertx-terraform
+* update terraform.tfvars
 * execute below commands
   * terraform init - to initialize a working directory containing Terraform configuration files
   * terraform plan -  to create an execution plan
